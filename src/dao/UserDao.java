@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import db.DbContext;
@@ -11,11 +13,7 @@ import model.User;
 
 public class UserDao extends BaseDao<User> {
 
-	@Override
-	List<User> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public boolean insert(User user) {
@@ -125,5 +123,34 @@ public class UserDao extends BaseDao<User> {
         }
      return duplicate;
  }
+
+	@Override
+	List<User> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public List<User> getAllUser() {
+        List<User> listUser = new ArrayList<>();
+        try {
+
+            Connection conn = new DbContext().getConnection();
+
+            Statement statement = conn.createStatement();
+
+            String sql = "select * from Users";
+
+            ResultSet rs = statement.executeQuery(sql);
+
+            while (rs.next()) {
+                listUser.add(new User(rs.getString("username"), rs.getString("password"), rs.getString("email")));
+            }
+
+            statement.close();
+            conn.close();
+        } catch (Exception ex) {
+        }
+
+        return listUser;
+    }
 
 }

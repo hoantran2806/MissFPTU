@@ -12,8 +12,12 @@ import javax.servlet.annotation.WebServlet;
 public class WelcomeController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher dispatcher= req.getRequestDispatcher("/admin/index.jsp");
+		RequestDispatcher dispatcher= req.getRequestDispatcher("./admin/index.jsp");
 		dispatcher.forward(req, resp);
+	}
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
 	}
 
 }
