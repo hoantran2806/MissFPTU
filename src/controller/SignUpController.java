@@ -51,7 +51,7 @@ public class SignUpController extends HttpServlet {
         
         if(isSuccess){
             request.setAttribute("alert", alertMsg);
-            response.sendRedirect("/login");
+            response.sendRedirect("login");
         }else{
             alertMsg = "System error!";
             request.setAttribute("alert", alertMsg);

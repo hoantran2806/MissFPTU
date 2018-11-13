@@ -44,7 +44,7 @@
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="index.html">Welcome,
+					<li class="active"><a href="index.jsp">Welcome,
 							${username }</a></li>
 					<li><a href="logout">Logout</a></li>
 
