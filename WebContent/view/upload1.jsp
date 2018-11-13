@@ -39,7 +39,7 @@
 
 
 
-	<script src="http://localhost:8080/MissFPTU/js/upload1.js"></script>
+	<script src="http://localhost:8080/MissFPTU/static/js/upload1.js"></script>
 
 	</form>
 

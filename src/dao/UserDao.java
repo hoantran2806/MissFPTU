@@ -20,13 +20,14 @@ public class UserDao extends BaseDao<User> {
 		Connection conn = DbContext.getConnection();
         int result =0;
          try {  
-            String query = "insert into [user] values(?,?,?)";
+            String query = "insert into [user](username,email,password,role_id) values(?,?,?,?)";
             
             PreparedStatement psmt = conn.prepareStatement(query);
             
             psmt.setString(1, user.getUsername());
             psmt.setString(2, user.getEmail());
             psmt.setString(3, user.getPassword());
+            psmt.setInt(4, 2);
             
             result = psmt.executeUpdate();
             System.err.println("Result "+result);

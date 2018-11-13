@@ -23,7 +23,7 @@
 	<h1>${alertMsg }</h1>
 		<form action="signup" method="POST">
 			<h1>Sign Up</h1>
-			<input type="text" name="name" class="Name" placeholder="username">
+			<input type="text" name="username" class="Name" placeholder="username">
 			<input type="text" name="email"	class="Email" placeholder="email">
 			<input type="password" name="password" class="Address" placeholder="password">
 			<button type="submit" value="Add" name="submit">Submit</button>

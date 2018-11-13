@@ -13,7 +13,7 @@
 <script
 	src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<c:url value="/static/js/upload.js" var="js"></c:url>
+<c:url value="static/js/upload.js" var="js"></c:url>
 <script type="text/javascript" src="${js }"></script>
 <c:url value="/static/css/upload.css" var="css"></c:url>
 <link rel="stylesheet" type="text/css" href="${css }">
