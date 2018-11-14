@@ -47,8 +47,8 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="index.html">Welcome,
-							${username }</a></li>
-					<li><a href="logout">Logout</a></li>
+							${username.username }</a></li>
+					<li><a href="../logout">Logout</a></li>
 
 				</ul>
 			</div>

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.User;
+
 import service.AuthenService;
 import util.Constant;
 
@@ -78,18 +80,19 @@ public class LoginController extends HttpServlet {
 	      
 	        AuthenService service = new AuthenService();
 	        
-	        boolean isSuccess = service.login(username, password);
+	        User user = service.login(username, password);
 	        
-	        
-	        if(isSuccess){
+
+	        if(user!=null){
 	            HttpSession session = request.getSession(true);
-	            session.setAttribute(Constant.SESSION_USERNAME, username);
+	            session.setAttribute(Constant.SESSION_USERNAME, user);
+	            
 
 	            if(isRememberMe){
 	                saveRemeberMe(response, username);
 	            }
-	           
-	            request.getRequestDispatcher(Constant.Path.DASHBOARD).forward(request, response);
+	            response.sendRedirect("./admin");	
+	            
 	        }else{
 	            alertMsg = "Username or password isn't correct";
 	            request.setAttribute("alert", alertMsg);

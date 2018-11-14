@@ -10,6 +10,12 @@ public class Image extends BaseModel {
 	public Image() {
 		super();
 	}
+	
+	public Image(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+
+	
 	public Image(int imgId, String imgName, int imgSize, int cateId, String imgUrl, String imgDesc) {
 		super();
 		this.imgId = imgId;

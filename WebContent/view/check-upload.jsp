@@ -8,8 +8,8 @@
 </head>
 <body>
  <center>
-        <h2>URL image: ${message}</h2>
-        <img alt="Imange" src="${msg }">
+        <h2>URL image: ${msg}</h2>
+        <img alt="Imange" src="/${msg }">
  
     </center>
 </body>

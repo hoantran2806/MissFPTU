@@ -11,15 +11,18 @@ public class AuthenService {
 	    }
 	    
 	    
-	    public boolean login(String username, String password){
+	    public User login(String username, String password){
 	        
 	        User user = dao.getBy(username);
 	        
-	        if(user==null||!password.equals(user.getPassword())){
-	            return false;
+	        if(user!=null && password.equals(user.getPassword())) {
+	        	
+	        	return user;
+
 	        }
 	        
-	        return true;
+	        return null;
+
 	    }
 	    
 	    public boolean register(String username, String password, String email){
